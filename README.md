@@ -286,3 +286,4 @@ accelerate launch train_v2.py
 - [ASTRAL-quantiztion](https://github.com/Plachtaa/ASTRAL-quantization) for the amazing speaker-disentangled speech tokenizer used by V2 model
 - [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) for foundationing the real-time voice conversion
 - [SEED-TTS](https://arxiv.org/abs/2406.02430) for the initial idea
+# seed-vc
