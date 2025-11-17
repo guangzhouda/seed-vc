@@ -7,14 +7,11 @@ import time
 from modules.commons import str2bool
 
 # Set up device and torch configurations
-if torch.cuda.is_available():
-    device = torch.device("cuda")
-elif torch.backends.mps.is_available():
-    device = torch.device("mps")
-else:
-    device = torch.device("cpu")
+# Force CPU mode to avoid CUDA issues
+device = torch.device("cpu")
+print("✓ 使用 CPU 设备（已强制设置）")
 
-dtype = torch.float16
+dtype = torch.float32  # CPU上使用float32更稳定
 
 # Global variables to store model instances
 vc_wrapper_v2 = None

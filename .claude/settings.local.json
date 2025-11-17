@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import soundfile as sf; print(''=== sorce-audio.wav ===''); info=sf.info(''/e/Projects/seed-vc/assets/sorce-audio.wav''); print(f''格式: {info.format}''); print(f''子格式: {info.subtype}''); print(f''采样率: {info.samplerate}Hz''); print(f''通道数: {info.channels}''); print(f''帧数: {info.frames}''); print(''=== targets.wav ===''); info=sf.info(''/e/Projects/seed-vc/assets/targets.wav''); print(f''格式: {info.format}''); print(f''子格式: {info.subtype}''); print(f''采样率: {info.samplerate}Hz''); print(f''通道数: {info.channels}''); print(f''帧数: {info.frames}'')\")",
+      "Bash(ffmpeg -i /e/Projects/seed-vc/assets/targets.wav)",
+      "Bash(ffmpeg -i /e/Projects/seed-vc/assets/targets_orig.m4a -ar 44100 -ac 1 /e/Projects/seed-vc/assets/targets.wav -y)",
+      "Bash(python -c \"import soundfile as sf; info=sf.info(''/e/Projects/seed-vc/assets/targets.wav''); print(f''targets.wav: {info.format}, {info.samplerate}Hz, {info.channels}ch, {info.frames/info.samplerate:.2f}s'')\")",
+      "Read(//e/e/Projects/seed-vc/output/**)",
+      "Bash(python inference_v2.py --source \"./assets/sorce-audio.wav\" --target \"./assets/targets.wav\" --output \"./output\" --diffusion-steps 25 --length-adjust 1.0 --intelligibility-cfg-rate 0.7 --similarity-cfg-rate 0.7)",
+      "Bash(tee conversion_log.txt)",
+      "Bash(cat conversion_log.txt)",
+      "Bash(python test_quick.py)",
+      "Bash(python inference_v2.py --source \"./assets/sorce-audio.wav\" --target \"./assets/targets.wav\" --output \"./output\" --diffusion-steps 15 --length-adjust 1.0)",
+      "Bash(tee conversion_final.log)",
+      "Bash(echo:*)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs -r kill)",
+      "Read(//e/e/Projects/seed-vc/**)",
+      "Bash(tee conversion_singing.log)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

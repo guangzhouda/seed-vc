@@ -1,0 +1,2 @@
+Source Audio / 源音频,Reference Audio / 参考音频,Diffusion Steps / 扩散步数,Length Adjust / 长度调整,Inference CFG Rate,Auto F0 adjust / 自动F0调整,Pitch shift / 音调变换,Stream Output Audio / 流式输出,Full Output Audio / 完整输出,timestamp
+.gradio\flagged\Source Audio  源音频\0a3f8f2536b5a3b9ef15\vocals_L.wav,.gradio\flagged\Reference Audio  参考音频\c72b97b517488dfe4b28\audio.wav,100,1,0.7,true,0,,,2025-10-28 10:29:19.109172

@@ -441,10 +441,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     cuda_target = f"cuda:{args.gpu}" if args.gpu else "cuda" 
 
-    if torch.cuda.is_available():
-        device = torch.device(cuda_target)
-    elif torch.backends.mps.is_available():
-        device = torch.device("mps")
-    else:
-        device = torch.device("cpu")
+    # Force CPU mode to avoid CUDA issues
+    device = torch.device("cpu")
+    print("✓ 使用 CPU 设备（已强制设置）")
     main(args)
